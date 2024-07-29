@@ -8,6 +8,7 @@ jobs:
   push_to_registry:
     name: Push to docker registry
     runs-on: ubuntu-latest
+    environment: CICD
     permissions:
       packages: write
       contents: read

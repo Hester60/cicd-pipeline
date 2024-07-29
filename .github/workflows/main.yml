@@ -11,6 +11,7 @@ run-name: "Linting, testing and building app"
 jobs:
   build_test:
     runs-on: ubuntu-latest
+    environment: CICD
     strategy:
       matrix:
         node-version: [ 18.x ]

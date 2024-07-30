@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json .
 
-# It will instance dev dependencies (run npm ci for prod)
+# run npm ci for prod
 RUN npm ci
 
 COPY . .

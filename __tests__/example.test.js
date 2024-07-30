@@ -35,7 +35,7 @@ describe('POST /sum', () => {
       .post('/sum')
       .send({ a: 1, b: 3 });
     expect(res.statusCode).toEqual(200);
-    expect(res.body).toHaveProperty('result', 9);
+    expect(res.body).toHaveProperty('result', 4);
   });
 
   it('should return 400 for invalid input', async () => {

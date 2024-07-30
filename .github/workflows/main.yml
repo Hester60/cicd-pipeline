@@ -44,11 +44,6 @@ jobs:
           npm run lint
           npm run test
 
-  notification_job:
-    runs-on: ubuntu-latest
-    environment: CICD
-    if: ${{ always() }}
-    steps:
       - name: Discord Notification on Failure
         if: ${{ success() }}
         env:

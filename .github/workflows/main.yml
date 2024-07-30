@@ -55,7 +55,7 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} (lint, tests) has failed.'
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} (lint, tests) passed the lint and tests.'
 
       - name: Discord Notification on Failure
         if: ${{ failure() }}
@@ -63,4 +63,4 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} passed the lint and tests.'
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has failed.'

@@ -52,7 +52,7 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} push has failed.'
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }}has been push to registry.'
 
       - name: Discord Notification on Failure
         if: ${{ failure() }}
@@ -60,4 +60,4 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been push to registry.'
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} push has failed.'

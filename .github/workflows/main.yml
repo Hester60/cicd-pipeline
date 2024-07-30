@@ -44,7 +44,7 @@ jobs:
           npm run lint
           npm run test
 
-      - name: Discord Notification on Failure
+      - name: Discord Notification on Success
         if: ${{ success() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}

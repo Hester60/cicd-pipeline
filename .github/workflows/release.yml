@@ -41,18 +41,13 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-  notification_job:
-    runs-on: ubuntu-latest
-    environment: CICD
-    if: ${{ always() }}
-    steps:
-      - name: Discord Notification on Failure
+      - name: Discord Notification on Success
         if: ${{ success() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }}has been push to registry.'
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been push to registry.'
 
       - name: Discord Notification on Failure
         if: ${{ failure() }}
